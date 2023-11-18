@@ -2,26 +2,243 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
+
+@font-face {
+  font-family: Vazir;
+  font-display: "swap";
+  src: url('../Fonts/Vazir-FD-WOL.woff2');
+  src: url('../Fonts/Vazir-FD-WOL.eot') format('embedded-opentype'),
+    url('../Fonts/Vazir-FD-WOL.woff') format('woff'),
+    url('../Fonts/Vazir-FD-WOL.ttf') format('truetype');
+  font-weight: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: Vazir;
+  font-display: "swap";
+  src: url('../Fonts/Vazir-Bold-FD-WOL.woff2');
+  src: url('../Fonts/Vazir-Bold-FD-WOL.eot') format('embedded-opentype'),
+    url('../Fonts/Vazir-Bold-FD-WOL.woff') format('woff'),
+    url('../Fonts/Vazir-Bold-FD-WOL.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Vazir;
+  font-display: "swap";
+  src: url('../Fonts/Vazir-Light-FD-WOL.woff2');
+  src: url('../Fonts/Vazir-Light-FD-WOL.eot') format('embedded-opentype'),
+    url('../Fonts/Vazir-Light-FD-WOL.woff') format('woff'),
+    url('../Fonts/Vazir-Light-FD-WOL.ttf') format('truetype');
+  font-weight: 300;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  box-sizing: border-box;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  /* default font of 16px */
+  font-family: "Vazir";
+  -webkit-font-smoothing: antialiased;
+  color: #373737;
+  background-color: #FFFFFF;
+}
+
+.shadowss {
+  box-shadow: 2px 32px 113px 19px rgba(0, 0, 0, 0.79);
+  -webkit-box-shadow: 2px 32px 113px 19px rgba(0, 0, 0, 0.79);
+  -moz-box-shadow: 2px 32px 113px 19px rgba(0, 0, 0, 0.79);
+}
+
+.bg {
+  background-image: url(../public/bg.jpg);
+  height: 500px;
+  position: relative;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.bg-color:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(9, 25, 42, 0.75);
+  content: "";
+  z-index: -1;
+}
+
+.animation-pulse {
+  /*box-shadow: 0 0 0 20px rgba(229,62,62, 0.5);
+  transform: scale(0.8);*/
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+
+  }
+
+  70% {
+    transform: scale(1.2);
+
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.img1 {
+  background-image: url(../public/img1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.img2 {
+  background-image: url(../public/2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.img3 {
+  background-image: url(../public/img3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.image-bg {
+  background-image: url(../public/bg-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+
+
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s {
+  position: initial !important;
+}
+
+.aa {
+  overflow: visible !important;
+  position: absolute !important;
+  left: -23px !important;
+  top: 50% !important;
+  -webkit-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
+  background: #004E60 !important;
+  width: 44px !important;
+  height: 44px !important;
+  display: inline-block !important;
+  line-height: 44px !important;
+  border-radius: 50% !important;
+  color: #fff;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+}
+
+.ab {
+  overflow: visible !important;
+  position: absolute;
+  right: -23px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background: #004E60;
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  line-height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.animates {
+  animation: fade-in .3s linear 1;
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(-25%);
+
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.active {
+  animation: fade-out .3s ease-out forwards;
+  display: none;
+}
+
+@keyframes fade-out {
+  0% {
+    transform: translateY(0);
+    display: block;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    display: none;
+  }
+}
+
+
+
+.TopBtn {
+  animation: TopBTN 0.5s ease forwards;
+
+}
+
+@keyframes TopBTN {
+  from {
+    transform: translateY(150%);
+  }
+
+  to {
+    transform: translateY(0);
+    display: block;
+  }
+}
+
+.dBtn {
+  animation: dBTN 0.5s ease forwards;
+}
+
+@keyframes dBTN {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(150%);
+    display: none;
+  }
 }
